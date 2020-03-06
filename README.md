@@ -12,11 +12,15 @@ Take this example, we "merge" a binary file with a batch script, like this:
 
 copy /B binaryfile.dll+script.bat payload.bat
 
-let's say binaryfile.dll a reverse shell and payload.bat only contains echo Hello World, we get this: (USE notepad++)
+let's say binaryfile.dll a reverse shell and payload.bat, we get this: (USE notepad++)
+
+
+![Step1](https://github.com/mobdk/BinBAT/blob/master/step1.PNG)
 
 
 
+Remove MZ from beginning of file, it is very important to follow simple rules each line in your batch script must end with CRLF, I use Notepad++ insert something like ABCDEF and the replace with \r\n
 
 
+![Step1](https://github.com/mobdk/BinBAT/blob/master/step2.PNG)
 
-Remove MZ from beginning of file, it is very important to follow simple rules each line in your batch script must end with CRLF, I use Notepad++ insert something like ABCDEF and the replace with \
