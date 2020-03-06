@@ -16,4 +16,7 @@ let's say binaryfile.dll a reverse shell and payload.bat only contains echo Hell
 
 
 
-![Step1](https://github.com/mobdk/BinBAT/blob/master/step1.PNG)
+
+
+
+Remove MZ from beginning of file, it is very important to follow simple rules each line in your batch script must end with CRLF, I use Notepad++ insert something like ABCDEF and the replace with \
