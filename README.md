@@ -24,3 +24,25 @@ Remove MZ from beginning of file, it is very important to follow simple rules ea
 
 ![Step1](https://github.com/mobdk/BinBAT/blob/master/step2.PNG)
 
+
+Why remove MZ? because this is an bypass method, AV/EDR look for header for identifying file type, now we create a temporary
+binary file buf.dll only with content MZ
+
+echo|set /p="MZ"^>C:\Windows\Tasks\buf.dll
+
+the next thing we have to do it "merge" our buf.dll with our batch script, the outcome is our final DLL payload, remember that
+the nature of binary files, it never look beyond its EOF.
+
+copy /B C:\Windows\Tasks\buf.dll+C:\Windows\Tasks\Venus.bat C:\Windows\Tasks\tasks.dll
+
+I breake the script with EXIT /b, I have copied dummy data after EXIT /b
+
+I recommend you start with payload coded in C#, because it don't break up, remember the Windows batch engine "think" this is 
+a script, at least not the beginning af the file :-)
+
+
+
+
+
+
+
